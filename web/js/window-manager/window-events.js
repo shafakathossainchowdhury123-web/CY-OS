@@ -1,6 +1,4 @@
-/**
- * CY-OS Window Events
- */
+/* Window Event */
 
 class WindowEvents {
     constructor(windowManager) {

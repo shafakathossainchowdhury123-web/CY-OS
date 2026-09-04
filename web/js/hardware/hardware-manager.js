@@ -28,23 +28,17 @@ class HardwareManager {
         };
     }
 
-    /*
-      hardware capability check
-     */
+    /* hardware capability check */
     isSupported(device) {
         return this.capabilities[device] === true;
     }
 
-    /**
-      Returning all detected capabilities.
-     */
+    /* Returning all detected capabilities */
     getCapabilities() {
         return { ...this.capabilities };
     }
 
-    /**
-      camera/microphone 
-     */
+    /* camera/microphone */
     async requestMedia(options = {}) {
         if (!this.isSupported("camera")) {
             throw new Error("Media devices are not supported.");
@@ -58,9 +52,7 @@ class HardwareManager {
         return navigator.mediaDevices.getUserMedia(constraints);
     }
 
-    /**
-      Bluetooth 
-     */
+    /* Bluetooth  */
     async requestBluetooth(options = {}) {
         if (!this.isSupported("bluetooth")) {
             throw new Error("Bluetooth is not supported.");
@@ -73,9 +65,7 @@ class HardwareManager {
         );
     }
 
-    /**
-      USB device
-     */
+    /* usb device */
     async requestUSB(filters = []) {
         if (!this.isSupported("usb")) {
             throw new Error("WebUSB is not supported.");
@@ -84,9 +74,7 @@ class HardwareManager {
         return navigator.usb.requestDevice({ filters });
     }
 
-    /**
-      serial port
-     */
+    /* serial port */
     async requestSerial(options = {}) {
         if (!this.isSupported("serial")) {
             throw new Error("Web Serial is not supported.");
@@ -95,9 +83,7 @@ class HardwareManager {
         return navigator.serial.requestPort(options);
     }
 
-    /**
-      MIDI access
-     */
+    /* MIDI access */
     async requestMIDI() {
         if (!this.isSupported("midi")) {
             throw new Error("Web MIDI is not supported.");
@@ -106,9 +92,7 @@ class HardwareManager {
         return navigator.requestMIDIAccess();
     }
 
-    /**
-    gamepads
-     */
+    /* gamepads */
     getGamepads() {
         if (!this.isSupported("gamepad")) {
             return [];
@@ -120,4 +104,4 @@ class HardwareManager {
 
 const hardware = new HardwareManager();
 
-export default hardware;
+export default hardware; 

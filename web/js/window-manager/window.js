@@ -1,6 +1,4 @@
-/**
- * CY-OS Window
- */
+/* CY-OS Window */
 
 class CYWindow {
     constructor(options = {}) {

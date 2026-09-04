@@ -1,8 +1,4 @@
-/**
- * CY-OS Window Manager
- *
- * Manages application windows inside the WebOS interface.
- */
+/* Window Manager */
 
 import WindowState from "./window-state.js";
 import CYWindow from "./window.js";

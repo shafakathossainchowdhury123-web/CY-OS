@@ -1,6 +1,4 @@
-/**
- * CY-OS Frontend Entry Point
- */
+/* the place where we link the frontend */
 
 import system from "./core/system.js";
 import appManager from "./apps/app-manager.js";
